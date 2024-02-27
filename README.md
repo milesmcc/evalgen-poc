@@ -1,4 +1,4 @@
-# Proof of Concept: Robust Policy Evals Using Model-Written Evaluations
+# Proof of Concept: Operationalizing T&S Policies as Evals at Scale
 
 > [!NOTE]
 > **This is a proof of concept.** I'd love feedback!
