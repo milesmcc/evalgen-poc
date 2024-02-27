@@ -23,7 +23,7 @@ This proof of concept sketches out an approach for generating model-graded evalu
 
 At a high level, the system generates a large number of situations that may "tempt" the model to violate the policy; these situations can then be incorporated into an existing eval harness that checks whether an evaluated model produces a generation in response to the situation that violates the policy. The system also generates "meta-evals" (i.e., examples of generations that should and should not be classified as violative) to ensure that the eval harness' grading model is working as expected.
 
-If the organization has real-world examples of situations in which the model has violated the policy, these examples can be used to help steer the generation process (and could perhas be included in the final eval set as well).
+If the organization has real-world examples of situations in which the model has violated the policy, these examples can be used to help steer the generation process (and could perhaps be included in the final eval set as well).
 
 Note that the generated evals are meant to test the model's adherence to a policy in a non-adversarial setting (that is, adherence to the policy in the case of regular usage). The generated evals are not meant to test the model's robustness to adversarial/red team attacks.
 
@@ -36,6 +36,8 @@ Note that the generated evals are meant to test the model's adherence to a polic
 * ...others? (I have not done an exhaustive lit review.)
 
 ## Approach
+
+[TODO: Specify the approach in more detail; be more precise about which models are doing what.]
 
 * A human (e.g., policy team member) writes a policy in natural language. For example, `The assistant must defer to trusted election resources for information about voting.`. To help steer generation, the human also provides an example of a situation that may yield (or "tempt") a violative generation. For example:
     
