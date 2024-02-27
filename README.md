@@ -14,7 +14,7 @@ When deploying LLMs in real-world systems, safety teams may want to set policies
 * A company deploying a shopping assistant chatbot may want to enforce a policy that their chat not make any drug or dosage recommendations (and instead defers the user to a licensed pharmacist or medical professional); and
 * A company deploying an automated customer support agent may wish to enforce a policy that their agent never mention competitors (in either a positive or negative light).
 
-How can organizations quantitatively assess how well their system adheres to a given policy across a wide range of situations? **By operationalizing their policy as an eval!**
+How can organizations quantitatively assess how well their system adheres to a given policy across a wide range of situations? How can we move beyond "vibes-based" evals and one-off red teaming? **By operationalizing policies as evals!**
 
 Unfortunately, creating evaluations often requires a significant amount of effort. Writing evals can be highly labor intensive; grading evals perhaps equally so. Given the sheer number of policies that an organization may want to operationalize in an eval—as well as the number of different systems the organization may want to evaluate—this can quickly become a bottleneck.
 
