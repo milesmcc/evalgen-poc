@@ -73,6 +73,9 @@ I used this approach to generate a [very small dataset](data/election_demo.jsonl
 - [ ] Compute embeddings for the generated examples to help understand/map diversity
 - [ ] Add related but non-violation eliciting examples to help detect over-refusal
 - [ ] Get access to a model that can generate situations for more sensitive situations (e.g., child safety, suicide and self-harm, terrorism, hate speech and harassment, etc.)
+- [ ] Run generated evals on a real model
+- [ ] Put together a catalog of policies that organizations may actually want to enforce
+- [ ] Experiment with different approaches to prompting (and phrasing policies) for better results
 
 ## Next Steps
 
