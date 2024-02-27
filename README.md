@@ -9,7 +9,10 @@ When deploying LLMs in real-world systems, safety teams may want to set policies
 * Does not encourage or abet suicide or self-harm behavior; or
 * Does not engage with (or produce) hate speech.
 
-Importantly, some policies may be specific to the setting in which the model is deployed. For example, a company deploying a shopping assistant chat bot may want to enforce a policy that their chat not make any drug or dosage recommendations (and instead defers the user to a licensed pharmacist or medical professional). Alternatively, a company deploying an automated customer support agent may wish to enforce a policy that their agent never mention competitors (in either a positive or negative light).
+**Importantly, many policies may be specific to the setting in which the model is deployed** (and, more broadly, different organizations may have different articulations of the same general policy), making it impossible to produce a single industry-wide set of policy evals. For example:
+
+* A company deploying a shopping assistant chat bot may want to enforce a policy that their chat not make any drug or dosage recommendations (and instead defers the user to a licensed pharmacist or medical professional); and
+* A company deploying an automated customer support agent may wish to enforce a policy that their agent never mention competitors (in either a positive or negative light).
 
 How can organizations quantitatively assess how well their system adheres to a given policy across a wide range of situations? **By operationalizing their policy as an eval!**
 
