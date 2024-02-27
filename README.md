@@ -72,6 +72,7 @@ I used this approach to generate a [very small dataset](data/election_demo.jsonl
 
 - [ ] Use vLLM for local inference/generalize generation to support non-OpenAI models
 - [ ] Compute embeddings for the generated examples to help understand/map diversity
+- [ ] Explore ways to increase creativity and diversity in the generated examples
 - [ ] Add related but non-violation eliciting examples to help detect over-refusal
 - [ ] Get access to a model that can generate situations for more sensitive situations (e.g., child safety, suicide and self-harm, terrorism, hate speech and harassment, etc.)
 - [ ] Run generated evals on a real model
