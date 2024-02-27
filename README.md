@@ -1,7 +1,7 @@
 # Proof of Concept: Operationalizing T&S Policies as Evals at Scale
 
 > [!NOTE]
-> **This is a proof of concept.** I'd love feedback!
+> **This is a proof of concept.** I'd love feedback! Are there any other papers or projects that I should be aware of? Are there any other use cases that I should consider? Are there any other limitations that immediately come to mind? Are there other ways to operationalize policies as evals at scale?
 
 When deploying LLMs in real-world systems, safety teams may want to set policies around the LLM's behavior. For example, in a chatbot setting, a company may want to ensure that the LLM:
 
@@ -23,6 +23,8 @@ This proof of concept sketches out an approach for generating model-graded evalu
 * Checking how changes to the model affect its adherence to the policy; etc...
 
 At a high level, the system generates a large number of situations that may "tempt" the model to violate the policy; these situations can then be incorporated into an existing eval harness that checks whether an evaluated model produces a generation in response to the situation that violates the policy. The system also generates "meta-evals" (i.e., examples of generations that should and should not be classified as violative) to ensure that the eval harness' grading model is working as expected.
+
+If the organization has real-world examples of situations in which the model has violated the policy, these examples can be used to help steer the generation process (and could perhas be included in the final eval set as well).
 
 Note that the generated evals are meant to test the model's adherence to a policy in a non-adversarial setting (that is, adherence to the policy in the case of regular usage). The generated evals are not meant to test the model's robustness to adversarial/red team attacks.
 
@@ -54,10 +56,16 @@ Many. To name a few:
 * It's necessarily the case that the generated evals will not provide full test coverage of every situation in which a model might violate a policy. The system can only generate evals for situations that it can "imagine" — and it might be insufficiently creative! Experienced trust and safety practicioners may help overcome this issue (to an extent) by providing creative example situations to the model.
 * The system may generate evals that are not representative of the distribution of situations in which the model is deployed.
 * Model-graded evals may not be as accurate as human-graded evals. Human-reviewed meta-evals can help mitigate this issue, but they are not perfect.
+* It's possible that the generated evals _won't_ ever actually elicit a violative response from the model, even if a violative response is possible; as a result, the generated evals may be "saturated" and/or give model developers a false sense of security.
+
+I also encountered a few challenges putting together this proof of concept:
+
+* Some publicly available models (e.g., `gpt-4`, `gpt-4-turbo-preview` and `gpt-3.5-turbo`) sometimes refuse to generate sensitive situations (or examples of violative content). I wasn't able to get any OpenAI model to generate evals for child safety or self-harm policies, for example. Effective generation may require access to a less-restricted model that can generate sensitive content.
+* I find the tone of the generated evals to be fairly homogenous; it's clear that the generated evals are not as diverse (in terms of tone or situations) as they could be.
 
 ## Early Demo
 
-I used this approach to generate a [very small dataset](data/election_demo.jsonl) of model-graded evals for the policy statement `"The assistant must defer to trusted election resources for information about voting."`. The data is available in the `data/` directory. (Full codebook forthcoming.)
+I used this approach to generate a [very small dataset](data/election_demo.jsonl) of model-graded evals for the policy statement `"The assistant must defer to trusted election resources for information about voting."` using GPT-4. The data is available in the `data/` directory. (Full codebook for the data forthcoming.)
 
 ## To Do
 
@@ -65,3 +73,7 @@ I used this approach to generate a [very small dataset](data/election_demo.jsonl
 - [ ] Compute embeddings for the generated examples to help understand diversity
 - [ ] Add related but non-violation eliciting examples to help detect over-refusal
 - [ ] Get access to a model that can generate situations for more sensitive situations (e.g., child safety, suicide and self-harm, terrorism, hate speech and harassment, etc.)
+
+## Next Steps
+
+Perhaps this approach could be the foundation of a great paper. Perhaps it makes sense as a collaboration between Anthropic and the Stanford Internet Observatory? I could also imagine using this approach to generate useful policy evals each with tens (hundreds?) of thousands of examples.
