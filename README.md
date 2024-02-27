@@ -61,7 +61,7 @@ The approach involves four models: the generator model (`generator`), which gene
 
 * Each exchange passes through a layer of review using the `verifier` model (also likely some kind of a language model) to ensure that the generated situation is relevant and high quality --- that is, that it may actually solicit a violative response.
 * On some subset (e.g., 25%) of situations, the `generator` model generates a "meta-eval": A pair of responses `(violative, compliant)` to the situation that can be used to ensure that the grading model is working as expected. A human can (and _should_) review the meta-evals for accuracy.
-* The generated situations are then incorporated into an existing eval harness. The eval harness uses the `evaluated` model to create a generation based on the provided situation. The `grader` then determines whether the `evaluated` model's output violates the policy. For robustness, the eval harness can also assess the `grader`'s accuracy using the meta-evals; its accuracy should be close to 100%.
+* The generated situations are then incorporated into an existing automated eval harness. The eval harness uses the `evaluated` model to create a generation based on the provided situation. The `grader` then determines whether the `evaluated` model's output violates the policy. For robustness, the eval harness can also assess the `grader`'s accuracy using the meta-evals; its accuracy should be close to 100%.
 
 I can also imagine generating related-but-not-violative situations to help detect over-refusal. (Otherwise, a model might simply refuse to engage with any situation in which the policy _might_ apply; perfectly safe, but useless.)
 
