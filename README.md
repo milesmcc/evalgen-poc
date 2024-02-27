@@ -1,7 +1,7 @@
 # Proof of Concept: Operationalizing T&S Policies as Evals at Scale
 
 > [!NOTE]
-> **This is a proof of concept for a nascent idea.** I'd love feedback! Are there any other papers or projects that I should be aware of? Are there any other use cases that I should consider? Are there any other limitations that immediately come to mind? Are there other ways to operationalize policies as evals at scale?
+> **This is a proof of concept for a nascent idea.** I'd love feedback! Are there any other papers or projects that I should be aware of? Are there any other use cases that I should consider? Are there any other limitations that immediately come to mind? Are there other ways to operationalize policies as evals at scale? Are there areas where this writeup is unclear or confusing?
 
 When deploying LLMs in real-world systems, safety teams may want to set policies for the LLM's behavior. For example, in a chatbot setting, a company may want to ensure that the LLM:
 
