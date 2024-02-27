@@ -5,7 +5,6 @@
 
 When deploying LLMs in real-world systems, safety teams may want to set policies around the LLM's behavior. For example, in a chatbot setting, a company may want to ensure that the LLM:
 
-* Does not repeat or generate election misinformation (and rather redirects users to trusted resources);
 * Provides accurate information about voting and elections, and defers to trusted election resources for information about voting when needed;
 * Does not encourage or abet suicide or self-harm behavior; or
 * Does not engage with (or produce) hate speech.
