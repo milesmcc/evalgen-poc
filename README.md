@@ -33,6 +33,7 @@ Note that the generated evals are meant to test the model's adherence to a polic
 * [Red Teaming Language Models with Language Models](https://arxiv.org/abs/2202.03286) (2022)
 * [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251) (2022)
 * [Using LLMs for Policy-Driven Content Classification](https://www.techpolicy.press/using-llms-for-policy-driven-content-classification/) (2024)
+* [SimpleSafetyTests: a Test Suite for Identifying Critical Safety Risks in Large Language Models](https://arxiv.org/abs/2311.08370)
 * ...others? (I have not done an exhaustive lit review.)
 
 ## Approach
