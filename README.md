@@ -81,7 +81,7 @@ Many.
 
 The primary challenge I see is generating a diverse set of situations that may elicit a violative response from the model. Even with different prompts and examples for the `generator` model, I empirically find that many of the generated situations are fairly similar: They often discuss similar topics and share a single style, tone, flow, etc. These situations also may not (and likely won't!) be representative of the distribution of situations in which the model is deployed.
 
-It's necessarily the case that the generated evals will not provide full test coverage of every situation in which a model might violate a policy. The system can only generate evals for situations that it can "imagine" — and it is almost certainly insufficiently creative. This issue is inherent to model-written evaluations, but there are a few ways to mitigate (though not fully resolve) it:
+The generated evals will not provide full test coverage of every situation in which a model might violate a policy. The system can only generate evals for situations that it can "imagine" — and it is almost certainly insufficiently creative. This issue is inherent(?) to model-written evaluations, but there are a few ways to mitigate (though not fully resolve) it:
 
 * Experienced trust and safety practitioners may help overcome this issue (to an extent) by providing a broad set of example situations to the `generator`.
 * The `generator` could use real-world (near-)violative conversations—or paraphrased versions of real-world conversations—to help the generated situations more closely resemble real-world conversations. The `generator` could also incorporate red teaming data to yield more diverse situations.
