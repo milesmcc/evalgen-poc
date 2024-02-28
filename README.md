@@ -32,7 +32,7 @@ At a high level, the system generates a large number of situations that may "tem
 
 If the organization has real-world examples of situations in which the model has violated the policy, these examples can be used to help steer the generation process (and could perhaps be included in the final eval set as well).
 
-Note that the generated evals are meant to test the model's adherence to a policy in a non-adversarial setting (that is, adherence to the policy in the case of regular usage). The generated evals are not meant to test the model's robustness to adversarial/red team attacks.
+Note that the generated evals are meant to test the model's adherence to a policy in a non-adversarial setting (that is, adherence to the policy in the case of normal use). The generated evals are not meant to test the model's robustness to adversarial/red team attacks (though generating repeatable "red team"-style evals for a given policy could be a great next step).
 
 ## Inspiration
 
