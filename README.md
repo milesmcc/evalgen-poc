@@ -48,6 +48,9 @@ Note that the generated evals are meant to test the model's adherence to a polic
 
 The approach involves four models: the generator model (`generator`), which generates situations that might elicit a policy violation; the verifier model (`verifier`), which checks whether the `generator`'s situations indeed exercise the policy; the evaluated model (`evaluated`), which is being assessed; and the grading model (`grader`), which checks whether generations by the `evaluated` model in response to the `generator`'s situations are actually violative. All four of these models can be a language model (and perhaps even the _same_ language model, albeit with different prompts).
 
+> [!NOTE]
+> There are many ways that we could make this approach more robust; this is intended as a high-level sketch. Please let me know if you have any ideas for improvement! This approach was partially inspired by [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251).
+
 * A human (e.g., policy team member) writes a policy in natural language. For example, `The assistant must defer to trusted election resources for information about voting.`. To help steer generation and promote diversity of responses, the human also provides example situations that may yield (or "tempt") a violative generation (I list several other ways humans could augment and improve this process in the Limitations & Challenges section below). For example:
     
     ```
