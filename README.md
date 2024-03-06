@@ -116,7 +116,7 @@ I used this approach to generate a [very small dataset](data/election_demo.jsonl
 
 ## Next Steps
 
-Perhaps this approach could be the foundation of a great paper. Perhaps it makes sense as a collaboration between Anthropic and the Stanford Internet Observatory? The specific artifacts I see are:
+Perhaps this approach could be the foundation of a helpful tool. The specific potential artifacts I see are:
 
 * A paper that describes and rigorously tests this approach.
-* Using this approach in collaboration with a number of policy experts — many of whom may work at SIO/Anthropic! — to generate a large (100k+ examples?) public dataset for a variety of policies that anyone could use to evaluate their models.
+* Using this approach in collaboration with a number of policy experts to generate a large (100k+ examples?) public dataset for a variety of policies that anyone could use to evaluate their models.
